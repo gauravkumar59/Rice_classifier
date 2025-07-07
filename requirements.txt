@@ -1,0 +1,7 @@
+streamlit==1.35.0
+tensorflow==2.13.0
+numpy
+pandas
+Pillow
+altair
+googletrans==4.0.0-rc1
