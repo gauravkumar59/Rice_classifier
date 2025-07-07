@@ -1,7 +1,5 @@
-streamlit
 tensorflow
-pandas
-numpy
+streamlit
 Pillow
 altair
 googletrans
