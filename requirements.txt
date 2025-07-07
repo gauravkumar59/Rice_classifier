@@ -1,7 +1,7 @@
-streamlit
-tensorflow
-numpy
+streamlit==1.35.0
+tensorflow==2.11.0
 pandas
+numpy
 Pillow
 altair
-googletrans
+googletrans==4.0.0rc1
