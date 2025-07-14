@@ -7,6 +7,7 @@ from PIL import Image
 import time
 import os
 from googletrans import Translator
+import base64  # Correct capitalization
 
 # Model paths
 MODEL_PATH = "rice_classifier.h5"
@@ -22,9 +23,27 @@ labels = open(LABEL_PATH).read().splitlines()
 translator = Translator()
 prediction_log = []
 
-# UI setup
+# Set page config
 st.set_page_config(page_title="Rice Classifier", layout="centered")
-st.title("🍚 Rice Type Classifier")
+st.title("🍚 Grain Scenner")
+
+# Add background image
+def set_bg_image(image_file):
+    with open(image_file, "rb") as f:
+        base64_img = base64.b64encode(f.read()).decode()
+    css_code = f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{base64_img}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    """
+    st.markdown(css_code, unsafe_allow_html=True)
+
+set_bg_image("bg.jpg")
 
 # Mode selection
 mode = st.radio("Choose input mode:", ["Upload Image", "Use Webcam"])
