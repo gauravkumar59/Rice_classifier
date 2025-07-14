@@ -25,7 +25,7 @@ prediction_log = []
 
 # Set page config
 st.set_page_config(page_title="Rice Classifier", layout="centered")
-st.title("🍚 Grain Scenner")
+st.title("🍚 Grain Scanner")
 
 # Add background image
 def set_bg_image(image_file):
